@@ -51,11 +51,10 @@ module.exports.creatArticle = function(id,callback){
 }
 
 //update and article
-modules.exports.updateArticle = function(id,data,callback){
- var title    = data.body.title;
- var category = data.body.category;
- var body     = data.body.body;
-
+module.exports.updateArticle = function(id,data,callback){
+ var title    = data.title;
+ var category = data.category;
+ var body     = data.body;
  //get the article to be updated
  Article.findById(id,function(err,article){
     if(!article)
