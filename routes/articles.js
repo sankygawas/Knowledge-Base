@@ -19,4 +19,12 @@ router.get('/:id', function(req, res, next) {
   })
 });
 
+router.get('/categories/:category', function(req, res, next) {
+  Article.getArticlesByCategory(req.params.category, function(err,article){
+    if(err)
+      console.log('error in retrieving')
+    res.json(article);
+  })
+});
+
 module.exports = router;
