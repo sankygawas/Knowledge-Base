@@ -46,7 +46,7 @@ module.exports.creatArticle = function(newArticle,callback){
 }
 
 //remove an articles
-module.exports.creatArticle = function(id,callback){
+module.exports.removeArticle = function(id,callback){
   Article.findById(id).remove(callback);
 }
 
