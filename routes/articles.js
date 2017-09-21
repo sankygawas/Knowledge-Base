@@ -61,4 +61,15 @@ router.put('/',function(req,res,next){
   });
 });
 
+
+//router to delete article
+router.delete('/:id',function(req,res,next){
+  Article.removeArticle(id,function(err,article){
+    if(err) console.log('error in removing')
+    res.location('/articles');
+    res.redirect('/articles');
+  });
+});
+
+
 module.exports = router;
