@@ -49,3 +49,24 @@ module.exports.creatArticle = function(newArticle,callback){
 module.exports.creatArticle = function(id,callback){
   Article.findById(id).remove(callback);
 }
+
+//update and article
+modules.exports.updateArticle = function(id,data,callback){
+ var title    = data.body.title;
+ var category = data.body.category;
+ var body     = data.body.body;
+
+ //get the article to be updated
+ Article.findById(id,function(err,article){
+    if(!article)
+      return next(new error('Could not retrieve object to be modified'))
+    else{
+      article.title    = title;
+      article.body     = body;
+      article.category = category;
+      Article.save(article,callback);
+    }
+ });
+
+
+}
