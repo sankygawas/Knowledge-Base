@@ -29,7 +29,7 @@ module.exports.getArticles = function(callback){
   Article.find(callback)
 }
 
-//get artiocles By Id
+//get articles By Id
 module.exports.getArticlesById = function(id,callback){
   Article.findById(id,callback)
 }
@@ -38,4 +38,14 @@ module.exports.getArticlesById = function(id,callback){
 module.exports.getArticlesByCategory = function(category,callback){
   var query = {category:category}
   Article.find(query,callback)
+}
+
+//create an articles
+module.exports.creatArticle = function(newArticle,callback){
+  Article.save(newArticle);
+}
+
+//remove an articles
+module.exports.creatArticle = function(id,callback){
+  Article.findById(id).remove(callback);
 }
