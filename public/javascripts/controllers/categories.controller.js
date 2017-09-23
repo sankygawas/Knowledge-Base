@@ -1,18 +1,34 @@
-angular.module('CategoriesModeule',[])
-.constant('categoriesURL','http://localhost:3000/categories')
+angular.module('CategoriesModule',[])
 
 //Home page categoreis controller
-.controller('CategoriesController',['$scope','$http','categoriesURL',function($scope,$http,categoriesURL){
-	$http.get(categoriesURL)
-	.then(function(response) {
-          console.log(response);
-          $scope.categories = response.data;
-    },function(result){
-    	console.log('Error'+result);
-    });
-}])
+.controller('CategoriesController',function($scope,$http,categoryService){
 
-//articles category detail controller
-.controller('CategoriesDetailController',['$scope','$http',function($scope,$http){
-	
-}])
+     categoryService.getCategories($scope.categoryName)
+     .then(function(categories){
+         $scope.categories = categories;
+     });
+})
+
+/* Categorywise articles*/
+.controller('CategoriesDetailController',function($scope,$http,$routeParams,categoryService){
+	$scope.articles        = []
+  $scope.categoryDetails = {}
+
+  $scope.categoryName = $routeParams.categoryName;
+
+  //get articles by category
+  categoryService.getArticlesByCategory($scope.categoryName)
+     .then(function(articles){
+        $scope.articles = articles;
+  });
+
+  //get Category Details
+  categoryService.getCategoryDetailsByName($scope.categoryName)
+     .then(function(categoryDetails){
+        $scope.categoryDetails = categoryDetails;
+        console.log(categoryDetails);
+  });
+
+})
+
+
