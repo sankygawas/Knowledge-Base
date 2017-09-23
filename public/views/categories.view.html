@@ -1,19 +1,36 @@
-<h1 class="my-4">Categories</h1>
-    <div class="row" ng-controller="CategoriesController">
-        <div class="col-lg-4 mb-4" ng-repeat="category in categories">
-        	<div class="grid">
-			<figure class="effect-marley">
-				<img ng-src="images/{{category.img}}.jpg" alt="img01"/>
-				<figcaption>
-					<h2 style="top:60%;text-align:center">{{category.name}}</h2>
-					<!-- <p>{{category.description}}</p> -->
-					<a href="#!/articles/category/{{category.name}}">View more</a>
-				</figcaption>			
-			</figure>
-			</div>
+<br>
+
+<!-- Categories -->
+<blockquote class="blockquote p-3">
+  <p class="mb-0 ">Categories</p>
+</blockquote>
+<div class="row" ng-controller="CategoriesController">
+    <div class="col-lg-4 mb-4" ng-repeat="category in categories">
+    	<div class="grid">
+		<figure class="effect-marley">
+			<img ng-src="images/{{category.img}}.jpg" alt="img01"/>
+			<figcaption>
+				<h2 style="top:60%;text-align:center">{{category.name}}</h2>
+				<a href="#!/articles/category/{{category.name}}">View more</a>
+			</figcaption>			
+		</figure>
 		</div>
 	</div>
-    
+</div>
 
+<!-- Latest Articles -->
+<blockquote class="blockquote p-3">
+	<p class="mb-0">Latest Articles</p>
+</blockquote>
+<div class="row"  ng-controller="ArticlesController">
+	<div class="col-lg-12 col-md-10 mx-auto">
+	  <div ng-repeat="article in articles" class="article">
 
-
+	    <a href="#"> 
+	      <h3 class="mb-0 dark-grey">{{article.title}}</h3>
+	      <p class="lead mb-0 dark-grey" >{{article.category}}</p>
+	      <small class="text-muted mb-0 grey">Posted on {{article.date | date}}</small>
+	    </a>
+	  </div>
+	</div>
+</div> 

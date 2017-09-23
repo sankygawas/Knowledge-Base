@@ -5,7 +5,7 @@ var Article = require('../models/article');
 //router to get all articles
 router.get('/', function(req, res, next) {
   Article.getArticles(function(err,articles){
-    if(err)   console.log('error in retrieving')
+    if(err)   console.log('error in retrieving all articles')
     res.json(articles);
   })
 });
@@ -13,7 +13,7 @@ router.get('/', function(req, res, next) {
 //router to get articles by Id
 router.get('/:id', function(req, res, next) {
   Article.getArticlesById(req.params.id, function(err,article){
-    if(err)   console.log('error in retrieving')
+    if(err)   console.log('error in retrieving article by Id')
     res.json(article);
   })
 });
@@ -21,7 +21,7 @@ router.get('/:id', function(req, res, next) {
 //router to get articles by category
 router.get('/categories/:category', function(req, res, next) {
   Article.getArticlesByCategory(req.params.category, function(err,article){
-    if(err)  console.log('error in retrieving')
+    if(err)  console.log('error in retrieving articles by category')
     res.json(article);
   })
 });

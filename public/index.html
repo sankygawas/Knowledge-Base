@@ -18,19 +18,17 @@
 
   <body>
     <nav class="navbar navbar-expand-md navbar-dark bg-dark">
-      <a class="navbar-brand" href="#">Knowledge-Base</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
+      <a class="navbar-brand" href="#">KNOWLEDGE BASE</a>
     </nav>
 
     <div class="container">
       <div ng-view></div>
     </div><!-- /.container -->
 
-    <footer>
-      <p>&copy; 2017 Knowledge Base</p>
-    </footer>
+    <div class="page-footer">
+      <p class="m-0">&copy; 2017 Knowledge Base</p>
+    </div>
+    
     <script src="bower_components/jquery/dist/jquery.min.js"></script>
     <script src="bower_components/popper.js/dist/umd/popper.min.js"></script>
     <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
@@ -39,5 +37,7 @@
     <script src="javascripts/app.js"></script>
     <script src="javascripts/controllers/articles.controller.js"></script>
     <script src="javascripts/controllers/categories.controller.js"></script>
+    <script src="javascripts/services/controllerService.js"></script>
   </body>
+ 
 </html>

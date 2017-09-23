@@ -1,12 +1,55 @@
-footer{
+
+html {
+  height: 100%;
+  box-sizing: border-box;
+}
+body {
+  position: relative;
+  margin: 0;
+  padding-bottom: 6rem;
+  min-height: 100%;
+  font-family: "Helvetica Neue", Arial, sans-serif;
+}
+
+.page-footer{
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 1rem;
   background-color: #343a40;
-  height:40px;
   color:#fff;
   text-align: center;
-  padding: 10px;
-  margin-top:10px;
 }
 
 .card-text{
 	font-size:13px !important;
+}
+
+blockquote{
+	background-color:  #343a40;
+	color: white;
+}
+
+.article a{
+text-decoration: none;
+color: grey;
+}
+
+.article:hover {
+	background-color: #eee;
+}
+.article{
+	padding-top:5px;
+	padding-bottom:10px;
+	border-bottom:1px solid #eee;
+  padding-left:10px;
+}
+
+.grey{
+	color:#cccccc;
+}
+
+.dark-grey{
+	color:#4d4d4d;
 }

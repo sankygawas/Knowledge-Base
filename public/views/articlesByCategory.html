@@ -1,0 +1,19 @@
+<br>
+
+<div class="jumbotron pt-2 pb-2">
+        <h1 class="display-4">{{categoryDetails.name}}</h1>
+        <p class="lead ">{{categoryDetails.description}}</p>
+</div>
+
+<div class="row" >
+	<div class="col-lg-12 col-md-10 mx-auto">
+	  <div ng-repeat="article in articles" class="article">
+
+	    <a href="#"> 
+	      <h3 class="mb-0 dark-grey">{{article.title}}</h3>
+	      <p class="lead mb-0 dark-grey" >{{article.category}}</p>
+	      <small class="text-muted mb-0 grey">Posted on {{article.date | date}}</small>
+	    </a>
+	  </div>
+	</div>
+</div> 
